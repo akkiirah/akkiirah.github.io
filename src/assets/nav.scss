@@ -1,0 +1,43 @@
+.header_wrap {
+    margin-block: 1rem;
+    display: flex;
+    font-size: clamp(1.5rem, 0rem + 7.5vw, 2.25rem);
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: $s) {
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+      }
+
+      @media screen and (min-width: $m) {
+        margin-top: 3rem;
+        margin-bottom: 7.5rem;
+      }
+            
+      @media screen and (min-width: $l) {
+        margin-top: 4.25rem;
+        margin-bottom: 10rem;
+      }
+  
+      @media screen and (min-width: $xl) {
+        margin-top: 6.25rem;
+        margin-bottom: 15.5rem;
+      }
+
+      @media screen and (min-width: $xxl) {
+        margin-bottom: 25rem;
+      }
+ 
+    .home {
+        padding-right: clamp(1rem, -1.5rem + 12.5vw, 4.5rem);
+        a {
+             
+        }
+    }
+
+    .about {
+        a {
+            
+        }
+    }
+}     

@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(1, 1, 9);
+  background: linear-gradient(128deg, #24272C, #16181b);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "SF Pro Display", Helvetica, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #e0e0e0;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+body::-webkit-scrollbar-track {
+  background: linear-gradient(128deg, #24272C, #16181b);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #CCA42D;
+  border-radius: 20px;
+  border: none;
+}
+body #app {
+  margin-inline: clamp(1rem, -1.3864rem + 11.9318vw, 12.25rem);
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+body #app h1,
+body #app h3,
+body #app span {
+  color: #CCA42D;
+  position: relative;
+  filter: drop-shadow(0px 0px 48px -10px rgba(0, 0, 0, 0.25));
+}
+body #app h1,
+body #app h3 {
+  margin-bottom: 1rem;
+}
+body #app h1::before,
+body #app h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("/src/images/circle.svg");
+  width: 40px;
+  height: 40px;
+  z-index: -1;
+  transform: translate(-33%, -10%);
+  border-radius: 100%;
+}
+@media screen and (min-width: 480px) {
+  body #app h1::before,
+body #app h3::before {
+    width: 60px;
+    height: 60px;
+    transform: translate(-35%, -20%);
+  }
+}
+@media screen and (min-width: 640px) {
+  body #app h1::before,
+body #app h3::before {
+    width: 80px;
+    height: 80px;
+    transform: translate(-35%, -20%);
+  }
+}
+body #app h1 {
+  font-size: clamp(2rem, 1.6667rem + 1.6667vw, 3rem);
+}
+body #app h3 {
+  font-size: clamp(1.625rem, 1.4167rem + 1.0417vw, 2.25rem);
+}
+body #app p {
+  font-size: clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem);
+}
+
+.header_wrap {
+  margin-block: 1rem;
+  display: flex;
+  font-size: clamp(1.5rem, 0rem + 7.5vw, 2.25rem);
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 480px) {
+  .header_wrap {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+}
+@media screen and (min-width: 640px) {
+  .header_wrap {
+    margin-top: 3rem;
+    margin-bottom: 7.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header_wrap {
+    margin-top: 4.25rem;
+    margin-bottom: 10rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header_wrap {
+    margin-top: 6.25rem;
+    margin-bottom: 15.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header_wrap {
+    margin-bottom: 25rem;
+  }
+}
+.header_wrap .home {
+  padding-right: clamp(1rem, -1.5rem + 12.5vw, 4.5rem);
+}
+.welcome {
+  margin-bottom: 4rem;
+  position: relative;
+}
+.welcome::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-image: url("/src/images/graphic.svg");
+  width: 524px;
+  height: 424px;
+  z-index: -1;
+  border-radius: 100%;
+  transform: scale(50%) translateY(50%);
+}
+@media screen and (min-width: 480px) {
+  .welcome::before {
+    transform: scale(60%) translateY(50%);
+  }
+}
+@media screen and (min-width: 640px) {
+  .welcome::before {
+    transform: scale(75%) translateY(50%);
+    left: auto;
+  }
+}
+@media screen and (min-width: 640px) {
+  .welcome::before {
+    transform: scale(90%) translateY(50%);
+    left: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .welcome::before {
+    transform: scale(100%);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .welcome::before {
+    transform: scale(140%) translateX(-10%);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .welcome::before {
+    transform: scale(180%) translateX(-20%);
+  }
+}
+.welcome .header_text {
+  width: 100%;
+}
+@media screen and (min-width: 480px) {
+  .welcome .header_text {
+    margin-bottom: 4rem;
+  }
+}
+@media screen and (min-width: 640px) {
+  .welcome .header_text {
+    margin-bottom: 8rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .welcome .header_text {
+    width: 90%;
+    margin-bottom: 15rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .welcome .header_text {
+    width: 33%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .welcome .header_text {
+    width: 40rem;
+  }
+}
+
+.iframe_container {
+  aspect-ratio: 16/9;
+  width: 50%;
+}
+.iframe_container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}/*# sourceMappingURL=styles.css.map */
