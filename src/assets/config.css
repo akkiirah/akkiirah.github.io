@@ -32,7 +32,6 @@ body::-webkit-scrollbar-thumb {
 body #app {
   margin-inline: clamp(1rem, -1.3864rem + 11.9318vw, 12.25rem);
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
           hyphens: auto;
 }
 body #app h1,
@@ -61,7 +60,7 @@ body #app h3::before {
 }
 @media screen and (min-width: 480px) {
   body #app h1::before,
-body #app h3::before {
+  body #app h3::before {
     width: 60px;
     height: 60px;
     transform: translate(-35%, -20%);
@@ -69,7 +68,7 @@ body #app h3::before {
 }
 @media screen and (min-width: 640px) {
   body #app h1::before,
-body #app h3::before {
+  body #app h3::before {
     width: 80px;
     height: 80px;
     transform: translate(-35%, -20%);
