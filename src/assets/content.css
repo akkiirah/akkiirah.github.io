@@ -2,6 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6rem;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 1280px) {
+  .content_wrap .content_wrapper {
+    margin-bottom: 6rem;
+  }
 }
 .content_wrap .content_wrapper .content {
   display: flex;

@@ -27,6 +27,34 @@
       @media screen and (min-width: $xxl) {
         margin-bottom: 25rem;
       }
+
+      .hasLink {
+        position: relative;
+        text-decoration: none;
+        color: $clr_font;
+        transition: color 250ms ease, transform 250ms ease;
+
+        &::before {
+          content: '';
+          transform: scale(0, 1);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background-color: $clr_font;
+          transition: color 250ms ease, transform 250ms ease, 250ms ease;
+        }
+
+        &:hover {
+          color: darken($clr_font, 20%);
+          
+          >&::before {
+            transform: scale(1, 1);
+            background-color: darken($clr_font, 20%);
+          }
+        }
+      }
  
     .home {
         padding-right: clamp(1rem, -1.5rem + 12.5vw, 4.5rem);

@@ -119,6 +119,30 @@ body #app p {
     margin-bottom: 25rem;
   }
 }
+.header_wrap .hasLink {
+  position: relative;
+  text-decoration: none;
+  color: #e0e0e0;
+  transition: color 250ms ease, transform 250ms ease;
+}
+.header_wrap .hasLink::before {
+  content: "";
+  transform: scale(0, 1);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #e0e0e0;
+  transition: color 250ms ease, transform 250ms ease, 250ms ease;
+}
+.header_wrap .hasLink:hover {
+  color: #adadad;
+}
+.header_wrap .hasLink:hover::before {
+  transform: scale(1, 1);
+  background-color: #adadad;
+}
 .header_wrap .home {
   padding-right: clamp(1rem, -1.5rem + 12.5vw, 4.5rem);
 }
@@ -205,6 +229,12 @@ body #app p {
   display: flex;
   flex-wrap: wrap;
   gap: 6rem;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 1280px) {
+  .content_wrap .content_wrapper {
+    margin-bottom: 6rem;
+  }
 }
 .content_wrap .content_wrapper .content {
   display: flex;
