@@ -27,7 +27,9 @@ window.addEventListener("DOMContentLoaded", () => {
           slash.classList.add("cursor");
           slash.textContent = "/";
           slash.setAttribute("data-text", slash.textContent);
-          element.appendChild(slash);
+          setTimeout(() => {
+            element.appendChild(slash);
+          }, speed * 2);
         }
 
         if (typeof callback === "function") {
