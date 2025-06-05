@@ -1,0 +1,62 @@
+//--------------------------------------------------
+// FONT CONFIGURATION
+//--------------------------------------------------
+$font-family-1: 'Nunito', sans-serif;
+$font-family-2: 'Fira Code', sans-serif;
+
+$font-size-scale: 1.250;
+$font-size-base: 1rem;
+
+//--------------------------------------------------
+// SMALLER FONT SIZES
+//--------------------------------------------------
+$font-size-1s: calc($font-size-base / $font-size-scale);
+$font-size-2s: calc($font-size-1s / $font-size-scale);
+$font-size-3s: calc($font-size-2s / $font-size-scale);
+$font-size-4s: calc($font-size-3s / $font-size-scale);
+
+//--------------------------------------------------
+// LARGER FONT SIZES
+//--------------------------------------------------
+$font-size-1l: calc($font-size-base * $font-size-scale);
+$font-size-2l: calc($font-size-1l * $font-size-scale);
+$font-size-3l: calc($font-size-2l * $font-size-scale);
+$font-size-4l: calc($font-size-3l * $font-size-scale);
+$font-size-5l: calc($font-size-4l * $font-size-scale);
+$font-size-6l: calc($font-size-5l * $font-size-scale);
+
+//--------------------------------------------------
+// COLOR PALETTE
+//--------------------------------------------------
+$clr-rosewater: #f5e0dc;
+$clr-flamingo: #f2cdcd;
+$clr-pink: #f5c2e7;
+$clr-darkpink: #D56697;
+$clr-mauve: #cba6f7;
+$clr-red: #f38ba8;
+$clr-maroon: #eba0ac;
+$clr-peach: #fab387;
+$clr-yellow: #f9e2af;
+$clr-green: #a6e3a1;
+$clr-teal: #94e2d5;
+$clr-sky: #89dceb;
+$clr-sapphire: #74c7ec;
+$clr-blue: #89b4fa;
+$clr-lavender: #b4befe;
+$clr-text: #cdd6f4;
+$clr-subtext-1: #bac2de;
+$clr-subtext-0: #a6adc8;
+$clr-overlay-2: #9399b2;
+$clr-overlay-1: #7f849c;
+$clr-overlay-0: #6c7086;
+$clr-surface-2: #585b70;
+$clr-surface-1: #45475a;
+$clr-surface-0: #313244;
+$clr-base: #1e1e2e;
+$clr-mantle: #181825;
+$clr-crust: #11111b;
+
+//--------------------------------------------------
+// TRANSITION DURATION
+//--------------------------------------------------
+$duration: 250ms;

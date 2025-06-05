@@ -1,0 +1,22 @@
+.button,
+a.button {
+    padding-block: e_clamp(20rem, 108rem, .5rem, 1.25rem);
+    padding-inline: e_clamp(20rem, 108rem, .75rem, 1.5rem);
+    border: none;
+    border-radius: 0;
+    background-color: $clr-crust;
+    color: $clr-yellow;
+    font-size: $font-size-base;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: color 250ms ease, opacity 250ms ease;
+
+    &:hover,
+    &:focus-visible {
+        cursor: pointer;
+        color: $clr-maroon;
+        border: none;
+        outline: none;
+    }
+}

@@ -1,0 +1,66 @@
+//--------------------------------------------------
+// DEBUG CONTAINER & ELEMENTS
+//--------------------------------------------------
+#debug-container {
+    position: fixed;
+    top: 3%;
+    left: 2%;
+    right: 2%;
+    max-height: 100%;
+    overflow-y: auto;
+    z-index: 1000000;
+    box-sizing: border-box;
+    font-family: $font-family-2;
+
+    .debug-string {
+        color: $clr-green;
+    }
+
+    .debug-bool {
+        color: $clr-mauve;
+    }
+
+    .debug-null,
+    .debug-scalar {
+        color: $clr-overlay-0;
+    }
+
+    .debug-number {
+        color: $clr-peach;
+    }
+}
+
+.debug-panel {
+    margin-bottom: 1rem;
+    background: $clr-crust;
+    border: 0.125rem solid $clr-overlay-0;
+    position: relative;
+}
+
+.debug-header {
+    font-weight: 700;
+    font-size: $font-size-1l;
+    margin-bottom: 5px;
+    padding: .5rem;
+    background: $clr-base;
+}
+
+.debug-content {
+    padding: .5rem;
+    color: white;
+}
+
+//--------------------------------------------------
+// TOGGLE LINK STYLES
+//--------------------------------------------------
+.toggle-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: $clr-text;
+    outline: 0.125rem solid $clr-lavender;
+    outline-offset: -0.25rem;
+}
+
+.toggle-content {
+    margin-left: 1em;
+}

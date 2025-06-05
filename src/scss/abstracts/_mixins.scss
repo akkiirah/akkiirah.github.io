@@ -1,0 +1,13 @@
+@function e_clamp($vonAufloesung, $bisAufloesung, $vonKlein, $bisGross) {
+    $scale-factor: (
+        calc(($bisGross - $vonKlein) / ($bisAufloesung - $vonAufloesung))
+    );
+$dynamic-value: calc(#{$vonKlein} + #{$scale-factor} * (100vw - #{$vonAufloesung}));
+@return clamp($vonKlein, $dynamic-value, $bisGross);
+}
+
+@mixin respond_from($min-width) {
+    @media screen and (min-width: #{$min-width}) {
+        @content; // Die Inhalte der Mixin-Anweisung
+    }
+}

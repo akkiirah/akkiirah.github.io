@@ -1,8 +1,0 @@
-.header_wrap {
-  padding-block: 1rem;
-  display: flex;
-  font-size: clamp(1.5rem, 0rem + 7.5vw, 2.25rem);
-}
-.header_wrap .home {
-  padding-right: clamp(1rem, -1.5rem + 12.5vw, 4.5rem);
-}/*# sourceMappingURL=nav.css.map */
