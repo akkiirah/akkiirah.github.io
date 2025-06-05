@@ -42,12 +42,15 @@ html {
 //--------------------------------------------------
 body {
     background-color: $clr-crust;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: .125rem;
     
-    span {
+    span,
+    p {
         position: relative;
         font-family: $font-family-2;
         font-size: $font-size-3l;
@@ -77,6 +80,11 @@ body {
         }
     }
 
+    p {
+      font-family: $font-family-1;
+      font-size: $font-size-1l;
+    }
+
     @keyframes blink-slash {
         0%, 49% {
         opacity: 1;
@@ -96,7 +104,6 @@ body {
   
     animation: blink-slash 1s step-end infinite;
   
-    /* Optional: minimaler Abstand ans Ende des getippten Textes */
-    margin-left: .125rem;
+    margin-left: .25rem;
   }
 }

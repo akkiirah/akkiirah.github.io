@@ -1,39 +1,48 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const span = document.getElementById("dstwre");
-  const fullText = span.getAttribute("data-text") || "";
-  span.textContent = "";
-  span.setAttribute("data-text", "");
-  setTimeout(() => {
-    let index = 0;
-    const typingSpeed = 100; // Millisekunden pro Buchstabe
+  const dstwreEl = document.getElementById("dstwre");
+  const descEl = document.getElementById("desc");
 
-    // 4. Interval für Typewriter‐Effekt
+  [dstwreEl, descEl].forEach((el) => {
+    const text = el.innerText.trim();
+    el.setAttribute("data-text", text);
+    el.textContent = "";
+  });
+
+  function typewriter(element, speed = 100, callback = null, addSlash = false) {
+    const fullText = element.getAttribute("data-text") || "";
+    element.textContent = "";
+
+    let index = 0;
     const typer = setInterval(() => {
       index++;
       const currentSlice = fullText.slice(0, index);
+      element.textContent = currentSlice;
+      element.setAttribute("data-text", currentSlice);
 
-      // a) sichtbarer Text
-      span.textContent = currentSlice;
-      // b) data-text aktualisieren (für die Pseudo‐Elemente)
-      span.setAttribute("data-text", currentSlice);
-
-      // 5. Wenn wir am Ende angekommen sind, Intervall stoppen und Slash einfügen
       if (index === fullText.length) {
         clearInterval(typer);
-        setTimeout(() => {
-          insertBlinkingSlash();
-        }, typingSpeed * 2);
-      }
-    }, typingSpeed);
 
-    // Funktion, die den blinkenden Slash innerhalb des selben Spans anhängt
-    function insertBlinkingSlash() {
-      const slash = document.createElement("span");
-      slash.classList.add("cursor");
-      slash.textContent = "/";
-      slash.setAttribute("data-text", slash.textContent);
-      // Hier: **innerhalb** von #typewriter ans Ende hängen
-      span.appendChild(slash);
-    }
-  }, 420);
+        if (addSlash) {
+          const slash = document.createElement("span");
+          slash.classList.add("cursor");
+          slash.textContent = "/";
+          slash.setAttribute("data-text", slash.textContent);
+          element.appendChild(slash);
+        }
+
+        if (typeof callback === "function") {
+          setTimeout(callback, speed * 2);
+        }
+      }
+    }, speed);
+  }
+
+  typewriter(
+    dstwreEl,
+    100,
+    () => {
+      typewriter(descEl, 100, null, false);
+    },
+    true
+  );
 });
