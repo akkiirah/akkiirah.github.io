@@ -1,0 +1,116 @@
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    flex: 1;
+
+    span,
+    p {
+        position: relative;
+        font-family: $font-family-2;
+        font-size: $font-size-3l;
+        color: $clr-text;
+    }
+
+    p {
+        font-family: $font-family-1;
+        font-size: $font-size-1l;
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-self: auto;
+    padding: .5rem;
+
+    span {
+        font-style: italic;
+
+        a.chromatic {
+            position: relative;
+            color: $clr-mantle;
+            font-family: $font-family-1;
+            text-decoration: none;
+            transition: margin 250ms ease, font-weight 250ms ease;
+
+            &::before,
+            &::after {
+                top: 0;
+            }
+
+            &::before {
+                left: -1px;
+            }
+
+            &::after {
+                left: 1px;
+            }
+
+            &:hover,
+            &:focus-visible {
+                margin-left: .25rem;
+                font-weight: 700;
+            }
+
+
+        }
+    }
+}
+
+.chromatic {
+    position: relative;
+
+    &::before,
+    &::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        clip-path: inset(0 0 0 0);
+        opacity: 0.8;
+    }
+
+    &::before {
+        left: -2px;
+        top: -1px;
+        color: $clr-darkpink;
+    }
+
+    &::after {
+        left: 2px;
+        top: 1px;
+        color: $clr-blue;
+    }
+}
+
+.cursor {
+    font-family: $font-family-2;
+    font-size: $font-size-3l;
+    color: $clr-text;
+
+    position: relative;
+    z-index: 1;
+
+    animation: blink-slash 1s step-end infinite;
+
+    margin-left: .25rem;
+}
+
+
+@keyframes blink-slash {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+}

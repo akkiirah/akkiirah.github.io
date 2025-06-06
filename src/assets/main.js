@@ -24,9 +24,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
         if (addSlash) {
           const slash = document.createElement("span");
-          slash.classList.add("cursor");
+          slash.classList.add("cursor", "chromatic");
           slash.textContent = "/";
           slash.setAttribute("data-text", slash.textContent);
+
           setTimeout(() => {
             element.appendChild(slash);
           }, speed * 2);
