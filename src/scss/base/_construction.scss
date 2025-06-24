@@ -101,6 +101,16 @@ footer {
     margin-left: .25rem;
 }
 
+.terminal-output {
+    position: absolute;
+    transition: opacity 250ms ease;
+
+    >div [] &.finished {
+        pointer-events: none;
+        opacity: 0;
+    }
+}
+
 
 @keyframes blink-slash {
 
