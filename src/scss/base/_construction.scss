@@ -1,3 +1,15 @@
+/*
+ * Licensed under JNK 1.1 - an Anti-Capitalist, Share-Alike, Post-Open-Source license.
+ *
+ * Learn from it, remix it, break it, rebuild it.
+ * But don’t sell it. Don’t lock it up.
+ *
+ * If you change or build on this, release your version under the same license,
+ * keep it free to access, and link back to where it came from.
+ *
+ * Full license text: https://dstwre.sh/license
+ */
+
 main {
     display: flex;
     justify-content: center;
@@ -5,19 +17,6 @@ main {
     align-items: center;
     height: 100%;
     flex: 1;
-
-    span,
-    p {
-        position: relative;
-        font-family: $font-family-2;
-        font-size: $font-size-3l;
-        color: $clr-text;
-    }
-
-    p {
-        font-family: $font-family-1;
-        font-size: $font-size-1l;
-    }
 }
 
 footer {
@@ -77,38 +76,47 @@ footer {
 
     &::before {
         left: -2px;
-        top: -1px;
+        top: -.5px;
         color: $clr-darkpink;
     }
 
     &::after {
         left: 2px;
-        top: 1px;
+        top: .5px;
         color: $clr-blue;
     }
 }
 
 .cursor {
-    font-family: $font-family-2;
-    font-size: $font-size-3l;
-    color: $clr-text;
 
     position: relative;
     z-index: 1;
 
-    animation: blink-slash 1s step-end infinite;
-
     margin-left: .25rem;
+    animation: blink-slash 1s step-end infinite;
 }
 
 .terminal-output {
     position: absolute;
     transition: opacity 250ms ease;
 
-    >div [] &.finished {
+    &.finished {
         pointer-events: none;
         opacity: 0;
     }
+}
+
+#bootOutput {
+    height: 80%;
+    aspect-ratio: 4/3;
+    overflow-y: auto;
+    line-height: 1.4;
+    padding: 1rem;
+    border: .5rem double#0000FF;
+    background-color: black;
+    color: #C0C0C0;
+    font-family: $font-family-3;
+    font-size: .65rem;
 }
 
 

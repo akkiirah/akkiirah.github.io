@@ -1,26 +1,34 @@
-$ ./dstwre.sh
-
-[dstwre.sh v1.0]
-
->> Initializing system memory...             [OK]
->> Allocating virtual stack space...         [OK]
->> Checking CPU architecture...              [x86_64] Detected
->> Loading core kernel modules...            [LOADED]
->> Mounting root filesystem...               [EXT4] Mounted successfully
->> Starting entropy daemon...                [OK]
->> Establishing secure uplink handshake...
-   > Resolving DNS...                        [OK]
-   > Pinging gateway node...                 [TIMEOUT]
-   > Handshake attempt #1...                 [FAILED]
-   > Handshake attempt #2...                 [FAILED]
->> Uplink status:                            [FAILED]
-
->> Entering fallback mode...
->> Attempting local override routines...
-   > system.recover()                        [NOT IMPLEMENTED]
-   > system.sleep(2147483647)                [ENGAGED]
-
----------------------------------------------
-   :: SYSTEM STATUS: UNDER CONSTRUCTION ::
-:: Please stand by for further instructions ::
----------------------------------------------
+[TIME] HEXATECH™ Secure Systems Environment (SSE) v2.3.9
+[TIME] Initializing HXSCHED: group.core, group.thread
+[TIME] Kernel: /firmware/hxcore.sys [build 4102-RELEASE] (composite-node)
+[TIME] Boot arguments: INIT=/bin/hxinit root=/mnt/hxblk0 ro quiet+verified
+[TIME] Loading microcode: hxmc_0xB1 / vector-capable
+[TIME] Allocated memory: 1024MiB (usable), 512MiB (reserved — HXSYS)
+[TIME] Modules loaded: fs_core, comm_bus, vmgrid, io_path, hxmon, visctrl
+[TIME] CPU0: HXSYN Core v3.1 – 660 MHz — Serial: HTX-0938-FA3
+[TIME] BIOS: Hexatech/corp/initboot 1.12 (Sector-4 preload)
+[TIME] Topology: 1 node(s), 2 logic paths, safety bitmask applied
+[TIME] Mounting sys layer: /mnt/hxblk0 [hximg-fs]
+[TIME] Released protected memory region: 64MiB (corestack)
+[TIME] Starting relay subsystem: io_relay
+[TIME] hxd[0108]: init OK (cfg=/etc/hxboot/run/init.map)
+[TIME] Environment ID: HX-ENV::CLASS-B / virtual-node
+[TIME] Loading driver bundle: /firm/hxdrvr/rasterpulse-21.rom
+[TIME] visctrl: GPU sync achieved
+[TIME] Secure entropy source enabled
+[TIME] hxsigmon[1]: sync → GRIDCONFIRM
+[TIME] Mounting read-only /usr/hxcore
+[TIME] blk-fs (hxblk0): HASH VALIDATED [3/3]
+[TIME] Starting network interface hxn0 → controller.hexatech.corp
+[TIME] STATUS: handshake with GRID successful
+[TIME] Loading task module: /tasks/sector4.relay.grid
+[TIME] Executing directive: INITCMD energize.relay sector=4
+[TIME] Grid active – throughput: nominal
+[TIME] Local runtime checks: PASSED
+[TIME] Boot sequence complete.
+[TIME] :: SYSREADY = TRUE
+[TIME] Welcome to HXSHELL. Auth pending.
+[TIME] NOTE: Uplink to Central Command not yet verified.\\n
+‎
+‎ 
+user@host:~$ 
