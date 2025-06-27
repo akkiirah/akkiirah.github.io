@@ -97,7 +97,15 @@ footer {
 .terminal-output {
     position: absolute;
     transition: opacity 250ms ease;
-
+    height: 80%;
+    aspect-ratio: 4/3;
+    line-height: 1.4;
+    padding: 1rem;
+    border: .5rem double#0000FF;
+    background-color: black;
+    overflow: hidden;
+    font-family: $font-family-3;
+    
     &.finished {
         pointer-events: none;
         opacity: 0;
@@ -105,16 +113,17 @@ footer {
 }
 
 #bootOutput {
-    height: 80%;
-    aspect-ratio: 4/3;
+    height: 100%;
     overflow-y: auto;
-    line-height: 1.4;
-    padding: 1rem;
-    border: .5rem double#0000FF;
-    background-color: black;
     color: #C0C0C0;
     font-family: $font-family-3;
     font-size: .65rem;
+}
+#bootHeader {
+    font-size: 1.25rem;
+    line-height: 1;
+    min-height: 1.25rem;
+    padding-inline: .5rem;
 }
 
 

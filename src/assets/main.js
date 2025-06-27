@@ -17,6 +17,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   dstwreEl.setAttribute("data-text", dstwreTxt);
   dstwreEl.textContent = "";
   const bootOut = document.getElementById("bootOutput");
+  const bootHead = document.getElementById("bootHeader");
 
   await typeLinesFromFile("/src/assets/boot.txt", bootOut, {
     instant: true,
@@ -24,9 +25,11 @@ window.addEventListener("DOMContentLoaded", async () => {
     maxDelay: 200,
   });
 
+  typeText(bootHead, 'SLOT_A/READY', 50, false, true);
   bootOut.lastChild.appendChild(dstwreEl);
 
   await typeText(dstwreEl, dstwreTxt, 175, true);
+  typeText(bootHead, 'EXE:SEQ042', 50, false, true);
 
   await typeLinesFromFile("/src/assets/header.txt", bootOut, {
     instant: true,
@@ -34,7 +37,10 @@ window.addEventListener("DOMContentLoaded", async () => {
     minDelay: 125,
     maxDelay: 125,
   });
+  typeText(bootHead, 'RESPONSE.200', 50, false, true);
   await typeLinesFromFile("/src/assets/init.txt", bootOut, {
     instant: true,
   });
+
+  typeText(bootHead, 'SYSTEM IS UNAWARE', 50, false, true);
 });

@@ -8,36 +8,60 @@
  */
 
 
-export function typeText(element, fullText, speed = 100, blinking = false) {
+export function typeText(element, fullText, speed = 100, blinking = false, erase = false) {
   return new Promise((resolve) => {
-    element.textContent = "";
-    let i = 0;
-    const timer = setInterval(() => {
-      i++;
-      element.textContent = fullText.slice(0, i);
-      if (i === fullText.length) {
-        clearInterval(timer);
+    const eraseText = () => {
+      return new Promise((eraseResolve) => {
+        const currentText = element.textContent;
+        let i = currentText.length;
 
-        if (blinking) {
-          const slash = document.createElement("span");
-          slash.className = "cursor chromatic";
-          slash.textContent = "▌";
-          slash.setAttribute("data-text", slash.textContent);
-          element.appendChild(slash);
+        const eraseTimer = setInterval(() => {
+          i--;
+          element.textContent = currentText.slice(0, i);
+          if (i <= 0) {
+            clearInterval(eraseTimer);
+            eraseResolve();
+          }
+        }, speed);
+      });
+    };
 
-          const onEnter = (e) => {
-            if (e.key === "Enter") {
-              document.removeEventListener("keydown", onEnter);
-              slash.remove();
-              resolve();
-            }
-          };
-          document.addEventListener("keydown", onEnter);
-        } else {
-          resolve();
+    const typeNewText = () => {
+      element.textContent = "";
+      let i = 0;
+      const timer = setInterval(() => {
+        i++;
+        element.textContent = fullText.slice(0, i);
+        if (i === fullText.length) {
+          clearInterval(timer);
+
+          if (blinking) {
+            const slash = document.createElement("span");
+            slash.className = "cursor chromatic";
+            slash.textContent = "▌";
+            slash.setAttribute("data-text", slash.textContent);
+            element.appendChild(slash);
+
+            const onEnter = (e) => {
+              if (e.key === "Enter") {
+                document.removeEventListener("keydown", onEnter);
+                slash.remove();
+                resolve();
+              }
+            };
+            document.addEventListener("keydown", onEnter);
+          } else {
+            resolve();
+          }
         }
-      }
-    }, speed);
+      }, speed);
+    };
+
+    if (erase) {
+      eraseText().then(typeNewText);
+    } else {
+      typeNewText();
+    }
   });
 }
 
@@ -79,10 +103,10 @@ export async function typeLinesFromFile(
         const lineEl = document.createElement("div");
         lineEl.innerHTML = lineWithTime;
         targetEl.appendChild(lineEl);
-        targetEl.scrollTop = targetEl.scrollHeight;
       } else {
         await typeLine(lineWithTime, targetEl, charSpeed);
       }
+      targetEl.scrollTop = targetEl.scrollHeight;
 
       const delay =
         idx === 0 ? 2000 : Math.random() * (maxDelay - minDelay) + minDelay;
