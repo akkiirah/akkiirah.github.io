@@ -1,14 +1,12 @@
 /*
- * Licensed under JNK 1.1 - an Anti-Capitalist, Share-Alike, Post-Open-Source license.
+ * Licensed under JNK 1.1 — an anti-capitalist, share-alike license.
  *
- * Learn from it, remix it, break it, rebuild it.
- * But don’t sell it. Don’t lock it up.
+ * Freely remix, learn, rebuild — just don’t sell or lock it down.
+ * Derivatives must stay free and link back to the source.
  *
- * If you change or build on this, release your version under the same license,
- * keep it free to access, and link back to where it came from.
- *
- * Full license text: https://dstwre.sh/license
+ * Full license: https://dstwre.sh/license
  */
+
 
 @function e_clamp($vonAufloesung, $bisAufloesung, $vonKlein, $bisGross) {
     $scale-factor: (

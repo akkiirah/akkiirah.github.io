@@ -7,6 +7,7 @@
  * Full license: https://dstwre.sh/license
  */
 
+
 export function typeText(element, fullText, speed = 100, blinking = false) {
   return new Promise((resolve) => {
     element.textContent = "";
