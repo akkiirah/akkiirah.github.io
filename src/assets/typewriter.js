@@ -43,13 +43,17 @@ export function typeText(element, fullText, speed = 100, blinking = false, erase
             element.appendChild(slash);
 
             const onEnter = (e) => {
-              if (e.key === "Enter") {
+              if (e.key === "Enter" || e.button === 0) {
                 document.removeEventListener("keydown", onEnter);
+                element.removeEventListener("click", onEnter); 
                 slash.remove();
                 resolve();
               }
             };
             document.addEventListener("keydown", onEnter);
+            element.addEventListener("click", onEnter);  
+            console.log(element);
+            
           } else {
             resolve();
           }

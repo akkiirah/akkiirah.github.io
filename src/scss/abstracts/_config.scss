@@ -25,6 +25,7 @@ $font-size-1s: calc($font-size-base / $font-size-scale);
 $font-size-2s: calc($font-size-1s / $font-size-scale);
 $font-size-3s: calc($font-size-2s / $font-size-scale);
 $font-size-4s: calc($font-size-3s / $font-size-scale);
+$font-size-5s: calc($font-size-4s / $font-size-scale);
 
 //--------------------------------------------------
 // LARGER FONT SIZES
