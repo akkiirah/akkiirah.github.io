@@ -122,8 +122,11 @@ footer {
     overflow-y: auto;
     color: #C0C0C0;
     font-family: $font-family-3;
-    font-size: $font-size-5s;
+    font-size: $font-size-6s;
 
+    @include respond_from(40rem) {
+        font-size: $font-size-5s;
+    }
     @include respond_from(48rem) {
         font-size: $font-size-4s;
     }
