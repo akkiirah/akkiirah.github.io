@@ -27,6 +27,7 @@ $font-size-3s: calc($font-size-2s / $font-size-scale);
 $font-size-4s: calc($font-size-3s / $font-size-scale);
 $font-size-5s: calc($font-size-4s / $font-size-scale);
 $font-size-6s: calc($font-size-5s / $font-size-scale);
+$font-size-7s: calc($font-size-6s / $font-size-scale);
 
 //--------------------------------------------------
 // LARGER FONT SIZES
@@ -37,6 +38,7 @@ $font-size-3l: calc($font-size-2l * $font-size-scale);
 $font-size-4l: calc($font-size-3l * $font-size-scale);
 $font-size-5l: calc($font-size-4l * $font-size-scale);
 $font-size-6l: calc($font-size-5l * $font-size-scale);
+$font-size-7l: calc($font-size-6l * $font-size-scale);
 
 //--------------------------------------------------
 // COLOR PALETTE
